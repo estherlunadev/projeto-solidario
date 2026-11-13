@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ponte Solidária | Plataforma de Doações</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+ <div class="header-inner">
+  <a class="brand" href="#inicio">♡ <b>Ponte</b> Solidária</a>
+  <nav aria-label="Telas do projeto">
+   <a href="#inicio" data-screen="inicio">01 Início</a>
+   <a href="#cadastro" data-screen="cadastro">02 Cadastro</a>
+   <a href="#login" data-screen="login">03 Login</a>
+   <a href="#dashboard" data-screen="dashboard">04 Dashboard</a>
+   <a href="#doacao" data-screen="doacao">05 Nova doação</a>
+   <a href="#itens" data-screen="itens">06 Itens disponíveis</a>
+   <a href="#detalhes" data-screen="detalhes">07 Detalhes do item</a>
+   <a href="#agendamento" data-screen="agendamento">08 Agendamento</a>
+   <a href="#historico" data-screen="historico">09 Histórico</a>
+   <a href="#admin" data-screen="admin">10 Administração</a>
+  </nav>
+  <button class="theme" id="themeBtn" type="button">☾ Tema escuro</button>
+ </div>
+</header>
+
+<main class="wrap">
+<section class="screen active" id="inicio">
+ <div class="hero">
+  <div><span class="eyebrow">SOLIDARIEDADE QUE APROXIMA</span><h1>Conectando doadores a quem <em>precisa.</em></h1>
+   <p>Uma ponte entre pessoas que desejam ajudar e famílias e instituições que precisam de apoio.</p>
+   <div class="actions"><a class="btn primary" href="#cadastro">Quero doar</a><a class="btn secondary" href="#cadastro">Sou uma ONG</a></div>
+  </div>
+  <div class="illustration"><img src="assets/img/ponte-solidaria-hero.png" alt="Pessoas realizando uma doação solidária"><p>Pequenos gestos transformam histórias.</p></div>
+ </div>
+ <div class="stats"><div class="stat"><strong id="countDonations">0</strong><span>Doações cadastradas neste navegador</span></div><div class="stat"><strong id="countItems">3</strong><span>Exemplos de itens disponíveis</span></div><div class="stat"><strong>15</strong><span>ONGs parceiras (exemplo)</span></div></div>
+ <div class="panel"><span class="eyebrow">SOBRE O PROJETO</span><h2>Uma rede de cuidado e solidariedade.</h2><p class="muted">O Ponte Solidária aproxima doadores, organizações e pessoas que precisam de apoio, facilitando o cadastro de itens e o agendamento de coletas.</p></div>
+</section>
+
+<section class="screen" id="cadastro">
+ <div class="section-head"><span class="eyebrow">TELA 02</span><h2>Crie sua conta</h2><p>Cadastre-se para participar da rede Ponte Solidária.</p></div>
+ <form class="form-card" id="registerForm">
+  <div class="form-grid">
+   <div class="field"><label for="nome">Nome completo</label><input id="nome" name="nome" required autocomplete="name"></div>
+   <div class="field"><label for="tipoConta">Tipo de cadastro</label><select id="tipoConta" name="tipo"><option value="Doador">Doador</option><option value="ONG">ONG / Instituição</option></select></div>
+   <div class="field"><label for="emailCadastro">E-mail</label><input id="emailCadastro" name="email" type="email" required autocomplete="email"></div>
+   <div class="field"><label for="telefone">Telefone</label><input id="telefone" name="telefone" type="tel" required placeholder="(00) 00000-0000"></div>
+   <div class="field"><label for="senhaCadastro">Senha</label><input id="senhaCadastro" name="senha" type="password" minlength="6" required autocomplete="new-password"></div>
+   <div class="field"><label for="confirmarSenha">Confirmar senha</label><input id="confirmarSenha" name="confirmarSenha" type="password" minlength="6" required autocomplete="new-password"></div>
+  </div>
+  <div class="notice">Demonstração acadêmica: os dados são armazenados somente no navegador utilizado.</div>
+  <div class="form-actions"><button class="btn primary" type="submit">Criar cadastro</button><a class="btn secondary" href="#login">Já tenho conta</a></div>
+ </form>
+</section>
+
+<section class="screen" id="login">
+ <div class="section-head"><span class="eyebrow">TELA 03</span><h2>Bem-vindo de volta!</h2><p>Entre na sua conta para continuar.</p></div>
+ <form class="form-card" id="loginForm">
+  <div class="form-grid">
+   <div class="field full"><label for="loginEmail">E-mail</label><input id="loginEmail" name="email" type="email" required autocomplete="username"></div>
+   <div class="field full"><label for="loginSenha">Senha</label><input id="loginSenha" name="senha" type="password" required autocomplete="current-password"></div>
+  </div>
+  <div class="form-actions"><button class="btn primary" type="submit">Entrar</button><a class="btn secondary" href="#cadastro">Criar conta</a></div>
+ </form>
+</section>
+
+<section class="screen" id="dashboard">
+ <div class="section-head"><span class="eyebrow">TELA 04</span><h2>Dashboard</h2><p>Visão geral da sua participação na rede solidária.</p></div>
+ <div class="stats"><div class="stat"><strong id="dashDonations">0</strong><span>Doações cadastradas</span></div><div class="stat"><strong id="dashSchedules">0</strong><span>Coletas agendadas</span></div><div class="stat"><strong id="dashUser">Visitante</strong><span>Usuário conectado</span></div></div>
+ <div class="grid">
+  <article class="card"><h3>Nova doação</h3><p>Cadastre roupas, alimentos, livros e outros itens.</p><a class="btn primary" href="#doacao">Cadastrar item</a></article>
+  <article class="card"><h3>Encontrar itens</h3><p>Consulte os itens disponibilizados pela comunidade.</p><a class="btn secondary" href="#itens">Ver itens</a></article>
+  <article class="card"><h3>Minhas coletas</h3><p>Acompanhe os agendamentos realizados.</p><a class="btn secondary" href="#historico">Ver histórico</a></article>
+ </div>
+</section>
+
+<section class="screen" id="doacao">
+ <div class="section-head"><span class="eyebrow">TELA 05</span><h2>Nova doação</h2><p>Compartilhe um item em bom estado com quem precisa.</p></div>
+ <form class="form-card" id="donationForm">
+  <div class="form-grid">
+   <div class="field"><label for="itemNome">Nome do item</label><input id="itemNome" name="item" required placeholder="Ex.: Casaco infantil"></div>
+   <div class="field"><label for="categoria">Categoria</label><select id="categoria" name="categoria" required><option value="">Selecione</option><option>Roupas</option><option>Alimentos</option><option>Livros</option><option>Brinquedos</option><option>Móveis</option><option>Outros</option></select></div>
+   <div class="field"><label for="estado">Estado de conservação</label><select id="estado" name="estado" required><option value="">Selecione</option><option>Novo</option><option>Usado — ótimo estado</option><option>Usado — bom estado</option></select></div>
+   <div class="field"><label for="quantidade">Quantidade</label><input id="quantidade" name="quantidade" type="number" min="1" value="1" required></div>
+   <div class="field full"><label for="descricao">Descrição</label><textarea id="descricao" name="descricao" required placeholder="Descreva o item, tamanho ou outras informações."></textarea></div>
+   <div class="field full"><label for="fotos">Foto do item</label><input id="fotos" name="fotos" type="file" accept="image/*" multiple><small class="muted">A imagem será pré-visualizada; o arquivo não é enviado a um servidor.</small><div id="previewFotos"></div></div>
+   <div class="field full"><label for="endereco">Endereço para coleta</label><select id="endereco" name="endereco" required><option value="">Selecione um endereço</option><option>Rua CT Lab 12</option><option>Rua Capitão Unipano Engarrafado</option></select></div>
+  </div>
+  <div class="form-actions"><button class="btn primary" type="submit">Publicar doação</button><a class="btn secondary" href="#dashboard">Cancelar</a></div>
+ </form>
+</section>
+
+<section class="screen" id="itens">
+ <div class="section-head"><span class="eyebrow">TELA 06</span><h2>Itens disponíveis</h2><p>Encontre uma doação que possa ajudar você ou sua instituição.</p></div>
+ <div class="panel" style="margin-bottom:18px"><div class="field"><label for="searchItems">Buscar item</label><input id="searchItems" type="search" placeholder="Digite o nome ou categoria do item..."></div></div>
+ <div class="grid" id="itemsGrid">
+  <article class="card donation-item" data-search="casaco infantil roupas"><div class="item-art">🧥</div><span class="pill">Disponível</span><h3>Casaco Infantil</h3><p>Roupas · Bom estado</p><button class="btn primary detailBtn" data-name="Casaco Infantil" data-category="Roupas" data-state="Bom estado" data-description="Casaco infantil em bom estado de conservação." type="button">Ver detalhes</button></article>
+  <article class="card donation-item" data-search="livros literatura educação"><div class="item-art">📚</div><span class="pill">Disponível</span><h3>Livros diversos</h3><p>Livros · Ótimo estado</p><button class="btn primary detailBtn" data-name="Livros diversos" data-category="Livros" data-state="Ótimo estado" data-description="Livros para leitura e apoio aos estudos." type="button">Ver detalhes</button></article>
+  <article class="card donation-item" data-search="alimentos cesta alimentos não perecíveis"><div class="item-art">🥫</div><span class="pill">Disponível</span><h3>Alimentos não perecíveis</h3><p>Alimentos · Novos</p><button class="btn primary detailBtn" data-name="Alimentos não perecíveis" data-category="Alimentos" data-state="Novos" data-description="Itens alimentícios não perecíveis dentro da validade." type="button">Ver detalhes</button></article>
+ </div>
+ <p id="noResults" class="notice" hidden>Nenhum item encontrado com esse termo.</p>
+</section>
+
+<section class="screen" id="detalhes">
+ <div class="section-head"><span class="eyebrow">TELA 07</span><h2>Detalhes do item</h2><p>Confira as informações antes de solicitar a coleta.</p></div>
+ <div class="two">
+  <div class="illustration"><div class="item-art" id="detailEmoji">🧥</div><p>Item disponível para doação</p></div>
+  <div class="card"><span class="pill">Disponível</span><h2 id="detailName">Casaco Infantil</h2><p><b>Categoria:</b> <span id="detailCategory">Roupas</span></p><p><b>Conservação:</b> <span id="detailState">Bom estado</span></p><p id="detailDescription">Casaco infantil em bom estado de conservação.</p><div class="actions"><a class="btn primary" href="#agendamento">Agendar coleta</a><a class="btn secondary" href="#itens">Voltar aos itens</a></div></div>
+ </div>
+</section>
+
+<section class="screen" id="agendamento">
+ <div class="section-head"><span class="eyebrow">TELA 08</span><h2>Agendamento de coleta</h2><p>Escolha a melhor data e horário para a retirada.</p></div>
+ <form class="form-card" id="scheduleForm">
+  <div class="form-grid">
+   <div class="field"><label for="doador">Doador</label><input id="doador" name="doador" value="João Silva" required></div>
+   <div class="field"><label for="itemAgendado">Item</label><input id="itemAgendado" name="item" value="Casaco Infantil" required></div>
+   <div class="field"><label for="dataColeta">Data da coleta</label><input id="dataColeta" name="data" type="date" required></div>
+   <div class="field"><label for="horaColeta">Horário</label><input id="horaColeta" name="horario" type="time" required></div>
+   <div class="field full"><label for="observacoes">Observações</label><textarea id="observacoes" name="observacoes" placeholder="Informações adicionais para a coleta."></textarea></div>
+  </div>
+  <div class="form-actions"><button class="btn primary" type="submit">Confirmar agendamento</button><a class="btn secondary" href="#itens">Voltar</a></div>
+ </form>
+</section>
+
+<section class="screen" id="historico">
+ <div class="section-head"><span class="eyebrow">TELA 09</span><h2>Histórico de doações</h2><p>Acompanhe os registros feitos neste navegador.</p></div>
+ <div class="table-wrap"><table><thead><tr><th>Item / Doador</th><th>Categoria / Data</th><th>Tipo</th><th>Status</th></tr></thead><tbody id="historyBody"><tr><td colspan="4">Ainda não há registros. Cadastre uma doação ou agendamento para visualizar aqui.</td></tr></tbody></table></div>
+</section>
+
+<section class="screen" id="admin">
+ <div class="section-head"><span class="eyebrow">TELA 10</span><h2>Painel administrativo</h2><p>Indicadores gerais da demonstração local do projeto.</p></div>
+ <div class="stats"><div class="stat"><strong id="adminDonations">0</strong><span>Doações cadastradas</span></div><div class="stat"><strong id="adminSchedules">0</strong><span>Agendamentos</span></div><div class="stat"><strong id="adminUsers">0</strong><span>Cadastros locais</span></div></div>
+ <div class="panel"><h3>Gerenciamento</h3><p class="muted">Os números são calculados a partir dos dados salvos no navegador. Para uso real por várias pessoas, será necessário conectar o projeto a um backend e banco de dados.</p><div class="actions"><button class="btn secondary" id="exportData" type="button">Exportar dados JSON</button><button class="btn secondary" id="logout" type="button">Sair da sessão</button></div></div>
+</section>
+</main>
+
+<footer><div class="wrap footer-inner"><span>♡ Ponte Solidária</span><span>Pequenos gestos constroem grandes pontes.</span><span>© <span id="year"></span></span></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<button class="backtop" id="backTop" aria-label="Voltar ao topo" type="button">↑</button>
+
+<script src="js/script.js" defer></script>
+</body>
+</html>
